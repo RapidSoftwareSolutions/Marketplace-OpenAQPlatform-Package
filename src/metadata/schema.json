@@ -1,0 +1,680 @@
+{
+    "package": "OpenAQPlatform",
+    "tagline": "OpenAQPlatform API",
+    "description": "OpenAQ is a community of scientists, software developers, and lovers of open environmental data",
+    "image": "https:\/\/logo.clearbit.com\/certly.io",
+    "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-OpenAQPlatform-Package",
+    "keywords": [
+        "API"
+    ],
+    "accounts": {
+        "domain": "https:\/\/openaq.org",
+        "credentials": []
+    },
+    "blocks": [
+        {
+            "name": "getCitiesList",
+            "description": "Provides a simple listing of cities within the platform.",
+            "args": [
+                {
+                    "name": "country",
+                    "type": "String",
+                    "info": "Limit results by a certain country.",
+                    "required": false
+                },
+                {
+                    "name": "orderBy",
+                    "type": "String",
+                    "info": "Order by field",
+                    "required": false,
+                    "structure": {
+                        "name": "order_by"
+                    }
+                },
+                {
+                    "name": "sort",
+                    "type": "Select",
+                    "options": [
+                        "asc",
+                        "desc"
+                    ],
+                    "info": "Define sort order",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Change the number of results returned, max is 10000.",
+                    "required": false
+                },
+                {
+                    "name": "page",
+                    "type": "Number",
+                    "info": "Paginate through results.",
+                    "required": false
+                }
+            ],
+            "vendorRequest": {
+                "url": "https:\/\/api.certly.io\/v1\/cities",
+                "method": "get",
+                "requestParameters": [
+                    {
+                        "type": "query",
+                        "parameters": [
+                            "country",
+                            "order_by",
+                            "sort",
+                            "limit",
+                            "page"
+                        ]
+                    }
+                ]
+            },
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getCountriesList",
+            "description": "Provides a simple listing of countries within the platform.",
+            "args": [
+                {
+                    "name": "orderBy",
+                    "type": "String",
+                    "info": "Order by field",
+                    "required": false,
+                    "structure": {
+                        "name": "order_by"
+                    }
+                },
+                {
+                    "name": "sort",
+                    "type": "Select",
+                    "options": [
+                        "asc",
+                        "desc"
+                    ],
+                    "info": "Define sort order",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Change the number of results returned, max is 10000.",
+                    "required": false
+                },
+                {
+                    "name": "page",
+                    "type": "Number",
+                    "info": "Paginate through results.",
+                    "required": false
+                }
+            ],
+            "vendorRequest": {
+                "url": "https:\/\/api.certly.io\/v1\/countries",
+                "method": "get",
+                "requestParameters": [
+                    {
+                        "type": "query",
+                        "parameters": [
+                            "order_by",
+                            "sort",
+                            "limit",
+                            "page"
+                        ]
+                    }
+                ]
+            },
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getLatestValue",
+            "description": "Provides the latest value of each available parameter for every location in the system.",
+            "args": [
+                {
+                    "name": "city",
+                    "type": "String",
+                    "info": "Limit results by a certain city.",
+                    "required": false
+                },
+                {
+                    "name": "country",
+                    "type": "String",
+                    "info": "Limit results by a certain country.",
+                    "required": false
+                },
+                {
+                    "name": "location",
+                    "type": "String",
+                    "info": "Limit results by a certain location.",
+                    "required": false
+                },
+                {
+                    "name": "parameter",
+                    "type": "Select",
+                    "options": [
+                        "pm25",
+                        "pm10",
+                        "so2",
+                        "no2",
+                        "o3",
+                        "co",
+                        "bc"
+                    ],
+                    "info": "Limit to only a certain parameter. Allowed values: pm25, pm10, so2, no2, o3, co, bc",
+                    "required": false
+                },
+                {
+                    "name": "hasGeo",
+                    "type": "Select",
+                    "options": [
+                        "true",
+                        "false"
+                    ],
+                    "info": "Filter out items that have or do not have geographic information.",
+                    "required": false,
+                    "structure": {
+                        "name": "has_geo"
+                    }
+                },
+                {
+                    "name": "coordinates",
+                    "type": "Map",
+                    "info": "Center point (lat, lon) used to get measurements within a certain area. (ex. coordinates=40.23,34.17)",
+                    "required": false
+                },
+                {
+                    "name": "radius",
+                    "type": "Number",
+                    "info": "Radius (in meters) used to get measurements within a certain area, must be used with coordinates.",
+                    "required": false
+                },
+                {
+                    "name": "orderBy",
+                    "type": "String",
+                    "info": "Order by field",
+                    "required": false,
+                    "structure": {
+                        "name": "order_by"
+                    }
+                },
+                {
+                    "name": "sort",
+                    "type": "Select",
+                    "options": [
+                        "asc",
+                        "desc"
+                    ],
+                    "info": "Define sort order",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Change the number of results returned, max is 10000.",
+                    "required": false
+                },
+                {
+                    "name": "page",
+                    "type": "Number",
+                    "info": "Paginate through results.",
+                    "required": false
+                }
+            ],
+            "vendorRequest": {
+                "url": "https:\/\/api.certly.io\/v1\/latest",
+                "method": "get",
+                "requestParameters": [
+                    {
+                        "type": "query",
+                        "parameters": [
+                            "city",
+                            "country",
+                            "location",
+                            "parameter",
+                            "has_geo",
+                            "coordinates",
+                            "radius",
+                            "order_by",
+                            "sort",
+                            "limit",
+                            "page"
+                        ]
+                    }
+                ]
+            },
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getLocationList",
+            "description": "Provides a list of measurement locations and their meta data.",
+            "args": [
+                {
+                    "name": "city",
+                    "type": "String",
+                    "info": "Limit results by a certain city.",
+                    "required": false
+                },
+                {
+                    "name": "country",
+                    "type": "String",
+                    "info": "Limit results by a certain country.",
+                    "required": false
+                },
+                {
+                    "name": "location",
+                    "type": "String",
+                    "info": "Limit results by a certain location.",
+                    "required": false
+                },
+                {
+                    "name": "parameter",
+                    "type": "Select",
+                    "options": [
+                        "pm25",
+                        "pm10",
+                        "so2",
+                        "no2",
+                        "o3",
+                        "co",
+                        "bc"
+                    ],
+                    "info": "Limit to only a certain parameter. Allowed values: pm25, pm10, so2, no2, o3, co, bc",
+                    "required": false
+                },
+                {
+                    "name": "hasGeo",
+                    "type": "Select",
+                    "options": [
+                        "true",
+                        "false"
+                    ],
+                    "info": "Filter out items that have or do not have geographic information.",
+                    "required": false,
+                    "structure": {
+                        "name": "has_geo"
+                    }
+                },
+                {
+                    "name": "coordinates",
+                    "type": "Map",
+                    "info": "Center point (lat, lon) used to get measurements within a certain area. (ex. coordinates=40.23,34.17)",
+                    "required": false
+                },
+                {
+                    "name": "radius",
+                    "type": "Number",
+                    "info": "Radius (in meters) used to get measurements within a certain area, must be used with coordinates.",
+                    "required": false
+                },
+                {
+                    "name": "orderBy",
+                    "type": "String",
+                    "info": "Order by field",
+                    "required": false,
+                    "structure": {
+                        "name": "order_by"
+                    }
+                },
+                {
+                    "name": "sort",
+                    "type": "Select",
+                    "options": [
+                        "asc",
+                        "desc"
+                    ],
+                    "info": "Define sort order",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Change the number of results returned, max is 10000.",
+                    "required": false
+                },
+                {
+                    "name": "page",
+                    "type": "Number",
+                    "info": "Paginate through results.",
+                    "required": false
+                }
+            ],
+            "vendorRequest": {
+                "url": "https:\/\/api.certly.io\/v1\/locations",
+                "method": "get",
+                "requestParameters": [
+                    {
+                        "type": "query",
+                        "parameters": [
+                            "city",
+                            "country",
+                            "location",
+                            "parameter",
+                            "has_geo",
+                            "coordinates",
+                            "radius",
+                            "order_by",
+                            "sort",
+                            "limit",
+                            "page"
+                        ]
+                    }
+                ]
+            },
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getMeasurementsData",
+            "description": "Provides data about individual measurements",
+            "args": [
+                {
+                    "name": "city",
+                    "type": "String",
+                    "info": "Limit results by a certain city.",
+                    "required": false
+                },
+                {
+                    "name": "country",
+                    "type": "String",
+                    "info": "Limit results by a certain country.",
+                    "required": false
+                },
+                {
+                    "name": "location",
+                    "type": "String",
+                    "info": "Limit results by a certain location.",
+                    "required": false
+                },
+                {
+                    "name": "parameter",
+                    "type": "Select",
+                    "options": [
+                        "pm25",
+                        "pm10",
+                        "so2",
+                        "no2",
+                        "o3",
+                        "co",
+                        "bc"
+                    ],
+                    "info": "Limit to only a certain parameter. Allowed values: pm25, pm10, so2, no2, o3, co, bc",
+                    "required": false
+                },
+                {
+                    "name": "hasGeo",
+                    "type": "Select",
+                    "options": [
+                        "true",
+                        "false"
+                    ],
+                    "info": "Filter out items that have or do not have geographic information.",
+                    "required": false,
+                    "structure": {
+                        "name": "has_geo"
+                    }
+                },
+                {
+                    "name": "coordinates",
+                    "type": "Map",
+                    "info": "Center point (lat, lon) used to get measurements within a certain area. (ex. coordinates=40.23,34.17)",
+                    "required": false
+                },
+                {
+                    "name": "radius",
+                    "type": "Number",
+                    "info": "Radius (in meters) used to get measurements within a certain area, must be used with coordinates.",
+                    "required": false
+                },
+                {
+                    "name": "valueFrom",
+                    "type": "Number",
+                    "info": "Show results above value threshold, useful in combination with parameter.",
+                    "required": false,
+                    "structure": {
+                        "name": "value_from"
+                    }
+                },
+                {
+                    "name": "valueTo",
+                    "type": "Number",
+                    "info": "Show results below value threshold, useful in combination with parameter.",
+                    "required": false,
+                    "structure": {
+                        "name": "value_to"
+                    }
+                },
+                {
+                    "name": "dateFrom",
+                    "type": "DatePicker",
+                    "info": "Show results after a certain date. This acts on the utc timestamp of each measurement. (ex. 2015-12-20, or 2015-12-20T09:00:00)",
+                    "required": false,
+                    "structure": {
+                        "name": "date_from",
+                        "format": "toFormat:{Y-m-d}"
+                    }
+                },
+                {
+                    "name": "dateTo",
+                    "type": "DatePicker",
+                    "info": "Show results before a certain date. This acts on the utc timestamp of each measurement. (ex. 2015-12-20, or 2015-12-20T09:00:00)",
+                    "required": false,
+                    "structure": {
+                        "name": "date_to",
+                        "format": "toFormat:{Y-m-d}"
+                    }
+                },
+                {
+                    "name": "orderBy",
+                    "type": "String",
+                    "info": "Order by field",
+                    "required": false,
+                    "structure": {
+                        "name": "order_by"
+                    }
+                },
+                {
+                    "name": "sort",
+                    "type": "Select",
+                    "options": [
+                        "asc",
+                        "desc"
+                    ],
+                    "info": "Define sort order",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Change the number of results returned, max is 10000.",
+                    "required": false
+                },
+                {
+                    "name": "page",
+                    "type": "Number",
+                    "info": "Paginate through results.",
+                    "required": false
+                }
+            ],
+            "vendorRequest": {
+                "url": "https:\/\/api.certly.io\/v1\/measurements",
+                "method": "get",
+                "requestParameters": [
+                    {
+                        "type": "query",
+                        "parameters": [
+                            "city",
+                            "country",
+                            "location",
+                            "parameter",
+                            "has_geo",
+                            "coordinates",
+                            "radius",
+                            "value_from",
+                            "value_to",
+                            "date_from",
+                            "date_to",
+                            "order_by",
+                            "sort",
+                            "limit",
+                            "page"
+                        ]
+                    }
+                ]
+            },
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getParametersList",
+            "description": "Provides data about individual measurements",
+            "args": [
+                {
+                    "name": "orderBy",
+                    "type": "String",
+                    "info": "Order by field",
+                    "required": false,
+                    "structure": {
+                        "name": "order_by"
+                    }
+                },
+                {
+                    "name": "sort",
+                    "type": "Select",
+                    "options": [
+                        "asc",
+                        "desc"
+                    ],
+                    "info": "Define sort order",
+                    "required": false
+                }
+            ],
+            "vendorRequest": {
+                "url": "https:\/\/api.certly.io\/v1\/parameters",
+                "method": "get",
+                "requestParameters": [
+                    {
+                        "type": "query",
+                        "parameters": [
+                            "order_by",
+                            "sort"
+                        ]
+                    }
+                ]
+            },
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getSourcesList",
+            "description": "Provides a list of data sources.",
+            "args": [
+                {
+                    "name": "orderBy",
+                    "type": "String",
+                    "info": "Order by field",
+                    "required": false,
+                    "structure": {
+                        "name": "order_by"
+                    }
+                },
+                {
+                    "name": "sort",
+                    "type": "Select",
+                    "options": [
+                        "asc",
+                        "desc"
+                    ],
+                    "info": "Define sort order",
+                    "required": false
+                },
+                {
+                    "name": "limit",
+                    "type": "Number",
+                    "info": "Change the number of results returned, max is 10000.",
+                    "required": false
+                },
+                {
+                    "name": "page",
+                    "type": "Number",
+                    "info": "Paginate through results.",
+                    "required": false
+                }
+            ],
+            "vendorRequest": {
+                "url": "https:\/\/api.certly.io\/v1\/sources",
+                "method": "get",
+                "requestParameters": [
+                    {
+                        "type": "query",
+                        "parameters": [
+                            "order_by",
+                            "sort",
+                            "limit",
+                            "page"
+                        ]
+                    }
+                ]
+            },
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        }
+    ]
+}
