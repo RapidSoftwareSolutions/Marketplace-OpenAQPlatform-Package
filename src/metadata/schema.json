@@ -55,7 +55,7 @@
                 }
             ],
             "vendorRequest": {
-                "url": "https:\/\/api.certly.io\/v1\/cities",
+                "url": "https://api.openaq.org/v1\/cities",
                 "method": "get",
                 "requestParameters": [
                     {
@@ -118,7 +118,7 @@
                 }
             ],
             "vendorRequest": {
-                "url": "https:\/\/api.certly.io\/v1\/countries",
+                "url": "https://api.openaq.org/v1\/countries",
                 "method": "get",
                 "requestParameters": [
                     {
@@ -238,7 +238,7 @@
                 }
             ],
             "vendorRequest": {
-                "url": "https:\/\/api.certly.io\/v1\/latest",
+                "url": "https://api.openaq.org/v1\/latest",
                 "method": "get",
                 "requestParameters": [
                     {
@@ -365,7 +365,7 @@
                 }
             ],
             "vendorRequest": {
-                "url": "https:\/\/api.certly.io\/v1\/locations",
+                "url": "https://api.openaq.org/v1\/locations",
                 "method": "get",
                 "requestParameters": [
                     {
@@ -515,7 +515,7 @@
                 }
             ],
             "vendorRequest": {
-                "url": "https:\/\/api.certly.io\/v1\/measurements",
+                "url": "https://api.openaq.org/v1\/measurements",
                 "method": "get",
                 "requestParameters": [
                     {
@@ -576,7 +576,7 @@
                 }
             ],
             "vendorRequest": {
-                "url": "https:\/\/api.certly.io\/v1\/parameters",
+                "url": "https://api.openaq.org/v1\/parameters",
                 "method": "get",
                 "requestParameters": [
                     {
@@ -636,7 +636,7 @@
                 }
             ],
             "vendorRequest": {
-                "url": "https:\/\/api.certly.io\/v1\/sources",
+                "url": "https://api.openaq.org/v1\/sources",
                 "method": "get",
                 "requestParameters": [
                     {
