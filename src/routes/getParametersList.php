@@ -13,7 +13,7 @@ $app->post('/api/OpenAQPlatform/getParametersList', function ($request, $respons
     }
 
     $requiredParams = [];
-    $optionalParams = ['orderBy'=>'orderBy','sort'=>'sort'];
+    $optionalParams = ['orderBy'=>'order_by','sort'=>'sort'];
     $bodyParams = [
        'query' => ['order_by','sort']
     ];

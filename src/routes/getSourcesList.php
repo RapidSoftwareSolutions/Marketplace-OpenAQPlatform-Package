@@ -13,7 +13,7 @@ $app->post('/api/OpenAQPlatform/getSourcesList', function ($request, $response) 
     }
 
     $requiredParams = [];
-    $optionalParams = ['orderBy'=>'orderBy','sort'=>'sort','limit'=>'limit','page'=>'page'];
+    $optionalParams = ['orderBy'=>'order_by','sort'=>'sort','limit'=>'limit','page'=>'page'];
     $bodyParams = [
        'query' => ['order_by','sort','limit','page']
     ];

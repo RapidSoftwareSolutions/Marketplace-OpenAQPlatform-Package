@@ -13,14 +13,20 @@ $app->post('/api/OpenAQPlatform/getMeasurementsData', function ($request, $respo
     }
 
     $requiredParams = [];
-    $optionalParams = ['city'=>'city','country'=>'country','location'=>'location','parameter'=>'parameter','hasGeo'=>'hasGeo','coordinates'=>'coordinates','radius'=>'radius','valueFrom'=>'valueFrom','valueTo'=>'valueTo','dateFrom'=>'dateFrom','dateTo'=>'dateTo','orderBy'=>'orderBy','sort'=>'sort','limit'=>'limit','page'=>'page'];
+    $optionalParams = ['city'=>'city','country'=>'country','location'=>'location','parameter'=>'parameter','hasGeo'=>'hasGeo','coordinates'=>'coordinates','radius'=>'radius','valueFrom'=>'valueFrom','valueTo'=>'valueTo','dateFrom'=>'dateFrom','dateTo'=>'dateTo','orderBy'=>'order_by','sort'=>'sort','limit'=>'limit','page'=>'page'];
     $bodyParams = [
        'query' => ['city','country','location','parameter','has_geo','coordinates','radius','value_from','value_to','date_from','date_to','order_by','sort','limit','page']
     ];
 
     $data = \Models\Params::createParams($requiredParams, $optionalParams, $post_data['args']);
 
-    
+    if(!empty($data['date_from'])){
+        $data['date_from'] = \Models\Params::toFormat($data['date_from'], "Y-m-dTH:i:s");
+    }
+
+    if(!empty($data['date_to'])){
+        $data['date_to'] = \Models\Params::toFormat($data['date_to'], "Y-m-dTH:i:s");
+    }
 
     $client = $this->httpClient;
     $query_str = "https://api.openaq.org/v1/measurements";

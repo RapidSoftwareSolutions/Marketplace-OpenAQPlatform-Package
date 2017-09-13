@@ -13,7 +13,7 @@ $app->post('/api/OpenAQPlatform/getCitiesList', function ($request, $response) {
     }
 
     $requiredParams = [];
-    $optionalParams = ['country'=>'country','orderBy'=>'orderBy','sort'=>'sort','limit'=>'limit','page'=>'page'];
+    $optionalParams = ['country'=>'country','orderBy'=>'order_by','sort'=>'sort','limit'=>'limit','page'=>'page'];
     $bodyParams = [
        'query' => ['country','order_by','sort','limit','page']
     ];

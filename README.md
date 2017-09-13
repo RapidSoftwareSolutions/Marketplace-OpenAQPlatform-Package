@@ -76,7 +76,6 @@ Provides data about individual measurements
 | city       | String    | Limit results by a certain city.
 | country    | String    | Limit results by a certain country.
 | location   | String    | Limit results by a certain location.
-| parameter  | Select    | Limit to only a certain parameter. Allowed values: pm25, pm10, so2, no2, o3, co, bc
 | hasGeo     | Select    | Filter out items that have or do not have geographic information.
 | coordinates| Map       | Center point (lat, lon) used to get measurements within a certain area. (ex. coordinates=40.23,34.17)
 | radius     | Number    | Radius (in meters) used to get measurements within a certain area, must be used with coordinates.

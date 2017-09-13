@@ -13,7 +13,7 @@ $app->post('/api/OpenAQPlatform/getLocationList', function ($request, $response)
     }
 
     $requiredParams = [];
-    $optionalParams = ['city'=>'city','country'=>'country','location'=>'location','parameter'=>'parameter','hasGeo'=>'hasGeo','coordinates'=>'coordinates','radius'=>'radius','orderBy'=>'orderBy','sort'=>'sort','limit'=>'limit','page'=>'page'];
+    $optionalParams = ['city'=>'city','country'=>'country','location'=>'location','parameter'=>'parameter','hasGeo'=>'hasGeo','coordinates'=>'coordinates','radius'=>'radius','orderBy'=>'order_by','sort'=>'sort','limit'=>'limit','page'=>'page'];
     $bodyParams = [
        'query' => ['city','country','location','parameter','has_geo','coordinates','radius','order_by','sort','limit','page']
     ];

@@ -420,21 +420,6 @@
                     "required": false
                 },
                 {
-                    "name": "parameter",
-                    "type": "Select",
-                    "options": [
-                        "pm25",
-                        "pm10",
-                        "so2",
-                        "no2",
-                        "o3",
-                        "co",
-                        "bc"
-                    ],
-                    "info": "Limit to only a certain parameter. Allowed values: pm25, pm10, so2, no2, o3, co, bc",
-                    "required": false
-                },
-                {
                     "name": "hasGeo",
                     "type": "Select",
                     "options": [
