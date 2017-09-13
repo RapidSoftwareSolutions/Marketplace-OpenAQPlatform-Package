@@ -475,7 +475,7 @@
                 {
                     "name": "dateTo",
                     "type": "DatePicker",
-                    "info": "Show results before a certain date. This acts on the utc timestamp of each measurement. (ex. 2015-12-20, or 2015-12-20T09:00:00)",
+                    "info": "Show results before a certain date. This acts on the utc timestamp of each measurement. (ex. 2015-12-20, or 2015-12-20T09:00:00). It is currently unstable!",
                     "required": false,
                     "structure": {
                         "name": "date_to",

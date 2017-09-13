@@ -82,7 +82,7 @@ Provides data about individual measurements
 | valueFrom  | Number    | Show results above value threshold, useful in combination with parameter.
 | valueTo    | Number    | Show results below value threshold, useful in combination with parameter.
 | dateFrom   | DatePicker| Show results after a certain date. This acts on the utc timestamp of each measurement. (ex. 2015-12-20, or 2015-12-20T09:00:00)
-| dateTo     | DatePicker| Show results before a certain date. This acts on the utc timestamp of each measurement. (ex. 2015-12-20, or 2015-12-20T09:00:00)
+| dateTo     | DatePicker| Show results before a certain date. This acts on the utc timestamp of each measurement. (ex. 2015-12-20, or 2015-12-20T09:00:00). It is currently unstable!
 | orderBy    | String    | Order by field
 | sort       | Select    | Define sort order
 | limit      | Number    | Change the number of results returned, max is 10000.
